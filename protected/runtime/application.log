@@ -1,0 +1,32 @@
+2012/12/26 18:27:03 [error] [exception.CDbException] SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+2012/12/26 18:27:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection连接数据库失败' in D:\apmxe\htdocs\framework\db\CDbConnection.php:388
+Stack trace:
+#0 D:\apmxe\htdocs\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 D:\apmxe\htdocs\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 D:\apmxe\htdocs\framework\base\CModule.php(388): CDbConnection->init()
+#3 D:\apmxe\htdocs\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 D:\apmxe\htdocs\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 D:\apmxe\htdocs\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 D:\apmxe\htdocs\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(product))
+#7 D:\apmxe\htdocs\framework\db\ar\CActiveRecord.php(394): CActiveRecord::model('product')
+#8 D:\apmxe\htdocs\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 D:\apmxe\htdocs\yiicms\protected\controllers\SiteController.php(23): CActiveRecord->__construct()
+#10 D:\apmxe\htdocs\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#11 D:\apmxe\htdocs\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\apmxe\htdocs\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#13 D:\apmxe\htdocs\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\apmxe\htdocs\framework\web\CWebApplication.php(276): CController->run('')
+#15 D:\apmxe\htdocs\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#16 D:\apmxe\htdocs\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#17 D:\apmxe\htdocs\yiicms\index.php(11): CApplication->run()
+#18 {main}
+REQUEST_URI=/
+---
+2012/12/26 18:27:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "favicon.ico"。' in D:\apmxe\htdocs\framework\web\CWebApplication.php:280
+Stack trace:
+#0 D:\apmxe\htdocs\framework\web\CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 D:\apmxe\htdocs\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\apmxe\htdocs\yiicms\index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
