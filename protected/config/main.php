@@ -9,7 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'网站测试版 BETA',
 	'sourceLanguage'=>'zh_cn',
-	'timeZone' => 'Asia/Shanghai',	
+	'timeZone' => 'Asia/Shanghai',
 	//'layout'=>'old',
 	'theme'=>'school',
 
@@ -33,6 +33,9 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
+				array(
+					'class'=>'CWebLogRoute',
+				),
 			),
 		),
 		'user'=>array(
@@ -51,7 +54,7 @@ return array(
 			// uncomment the following to use MySQL as database
 			'connectionString'=>'mysql:host=127.0.0.1;dbname=yiicms',
 			'username'=>'root',
-			'password'=>'123456',
+			'password'=>'',
 			'charset'=>'utf8',
 
 			'schemaCachingDuration'=>3600,
@@ -70,7 +73,7 @@ return array(
                 '<controller:\w+>/<id:\d+>/<title>'=>'<controller>/view',
                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/cate_id/<cate_id:\d+>'=>'<controller>/list',
-				
+
 				'teacher'=>'product/list/cate_id/25',
 				'student'=>'product/list/cate_id/26',
             ),

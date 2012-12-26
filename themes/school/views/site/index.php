@@ -80,7 +80,7 @@
 		</div>
 	</div>
 	<div id="index_content">
-		<?php echo $content->content;?>
+		<?php echo @$content->content;?>
 	</div>
 	<div id="index_product">
 		<div class="product_title">
@@ -90,7 +90,7 @@
 			<?php foreach($digest as $n=>$model): ?>
 				<div class="new_prod_box <?php echo $n%2?'even':'odd';?>">
 					<div class="prod_bg">
-						<?php echo CHtml::link(CHtml::image($model->icon,$model->title,array('class'=>product_img_small)),array('/product/show','id'=>$model->id)); ?>
+						<?php echo @CHtml::link(CHtml::image($model->icon,$model->title,array('class'=>product_img_small)),array('/product/show','id'=>$model->id)); ?>
 					</div>
 					<?php echo CHtml::link($model->title,array('/product/show','id'=>$model->id)); ?>
 				</div>

@@ -28,7 +28,7 @@ class MainSidebar extends CWidget
 		$items=array();
 		$controller=$this->controller;
 		$action=$controller->action;
-
+		$message = '';
 		if($controller->id == 'content')
 		{
 			switch($action->id)
@@ -38,19 +38,19 @@ class MainSidebar extends CWidget
 					case 'honor':$cate_id = 12;break;
 				}
 			$tree = tree::model()->findByPK($cate_id);
-			
-			
+
+
 			$message .= '<dt>'.CHtml::encode($tree->name,array('/about','id'=>$tree->id)).'</dt>';
 
 			$criteria=new CDbCriteria;
 			$criteria->condition = "cate_id = $cate_id";
 			$criteria->order = "sort desc";
 			$content = content::model()->findAll($criteria);
-			
 
 
 
-					
+
+
 			foreach($content as $tree)
 			{
 				$class_name = $tree->id == $_GET['id'] ? ' class = "show"' : '';
@@ -78,8 +78,8 @@ class MainSidebar extends CWidget
 			{
 				$root = $root->getParentNode();
 			}
-			
-			
+
+
 			$tree2 = $root->getTree();
 			foreach($tree2 as $key => $subtree)
 			{
@@ -95,7 +95,8 @@ class MainSidebar extends CWidget
 	{
 
 		$url = '/product';
-		
+		$data = '';
+		$class_name = '';
 		if($this->controller->id == 'product')
 		{
 			$cate_id = $this->controller->cate_id;

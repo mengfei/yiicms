@@ -20,7 +20,7 @@
 
 	<div id="header">
 		<div id="logo">
-			<?php echo CHtml::link(CHtml::image('images/logo.png','logo',array('class'=>product_img_small)),$model->icon); ?>
+			<?php echo @CHtml::link(CHtml::image('images/logo.png','logo',array('class'=>product_img_small)),$model->icon); ?>
 		</div>
 
 		<div id="right_top">
@@ -38,7 +38,7 @@
 		<div class="clear"></div>
 	</div>
 		<div id="nav">
-			<?php 
+			<?php
 			$data = array(
 				'items'=>array(
 					array('label'=>'首页', 'url'=>array('/site')),
@@ -47,12 +47,12 @@
 					array('label'=>'青春学子', 'url'=>array('/student')),
 				),
 			);
-			
-			
+
+
 			$root = tree::model()->findByPK(2);
 			$arr = $root->getChildNodes();
 
-		
+
 			if(!empty($arr))
 			{
 				foreach($arr as $node)
@@ -62,10 +62,10 @@
 						'url' => array('/notice','cate_id'=>$node->id)
 					);
 				}
-			}			
+			}
 
 			$this->widget('application.components.MainMenu',$data);
-			
+
 			?>
 		</div>
 	<div id="contain">
@@ -91,7 +91,7 @@
 						  </ul>
 				</div>
 			</div>
-			
+
 
 			<div>
 				<div class="bar1">
@@ -111,7 +111,7 @@
 							<li><a href="rmwz/1.ppt">中小学生交通安全知识讲稿</a></li>
 						  </ul>
 				</div>
-			</div>			
+			</div>
 		</div>
 
 		<!--end of sidebar-->

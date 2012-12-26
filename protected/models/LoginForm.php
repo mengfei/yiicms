@@ -22,7 +22,7 @@ class LoginForm extends CFormModel
 			// username and password are required
 			array('username, password', 'required'),
 			//验证码
-			array('verifyCode', 'captcha', 'allowEmpty'=>!extension_loaded('gd')),
+			//array('verifyCode', 'captcha', 'allowEmpty'=>!extension_loaded('gd')),
 			// password needs to be authenticated
 			array('password', 'authenticate'),
 			array('rememberMe', 'safe'),

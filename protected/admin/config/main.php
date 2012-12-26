@@ -50,8 +50,8 @@ return array(
 			// your users' table username column (default: username)
 			"username"=>"username",
 			// If in debug mode (default: false)
-			// In debug mode every user (even guest) can admin srbac, also 
-			//if you use internationalization untranslated words/phrases 
+			// In debug mode every user (even guest) can admin srbac, also
+			//if you use internationalization untranslated words/phrases
 			//will be marked with a red star
 			"debug"=>false,
 			// The number of items shown in each page (default:15)
@@ -97,8 +97,8 @@ return array(
                     'class'=>'CEmailLogRoute',
                     'levels'=>'error, warning',
                     'emails'=>'huanghuibin@gmail.com',
-                ),	
-                */			
+                ),
+                */
 			),
 		),
 
@@ -110,7 +110,7 @@ return array(
 		'file'=>array(
 			'class'=>'application.extensions.file.CFile',
 		),
-		
+
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
@@ -122,11 +122,11 @@ return array(
 			// uncomment the following to use MySQL as database
 			'connectionString'=>'mysql:host=127.0.0.1;dbname=yiicms',
 			'username'=>'root',
-			'password'=>'123456',
+			'password'=>'',
 			'charset'=>'utf8',
 
 			'schemaCachingDuration'=>3600,
-			'enableParamLogging'=>true,			
+			'enableParamLogging'=>true,
 		),
 
 		'authManager'=>array(
@@ -154,7 +154,7 @@ return array(
 			'directoryLevel'=>'2',
 			'cachePath'=>$frontend.'/runtime/cache',
 		),
-		
+
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'showScriptName'=>true,
@@ -162,7 +162,7 @@ return array(
 				//'<controller:\w+>'=>'<controller>/list',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',Z
 			),
-		),		
+		),
 
 	),
 
@@ -171,5 +171,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'huanghuibin@gmail.com',
+		'base_url'=>'http://yiicms.test.com',
 	),
 );

@@ -74,7 +74,6 @@ class content extends CActiveRecord
 	{
 		$criteria=new CDbCriteria;
 		$criteria->condition = 'cate_id = '. $cate_id ;
-
 		if(!empty($id))
 		{
 			if(is_numeric($id))

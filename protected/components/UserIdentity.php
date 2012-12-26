@@ -29,16 +29,16 @@ class UserIdentity extends CUserIdentity
 
 			$this->setState('role', '管理员');
 			$arr = array(
-				lastLoginTime => date('Y-m-d H:i:s'),
-				lastLoginIp => Yii::app()->request->userHostAddress,
+				'lastLoginTime' => date('Y-m-d H:i:s'),
+				'lastLoginIp' => Yii::app()->request->userHostAddress,
 			);
 
 			$user->saveAttributes($arr);
 
             $this->errorCode=self::ERROR_NONE;
 			//ckfinder
-			$_SESSION['ckfinder'] == true;
-			
+			//$_SESSION['ckfinder'] == true;
+
 
 
 		}

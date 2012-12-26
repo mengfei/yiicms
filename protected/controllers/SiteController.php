@@ -36,6 +36,7 @@ class SiteController extends CController
 
 		//中间信息
 		$cate_id = 14;
+		$_GET['id'] =1;
         $content=content::model()->getContent($_GET['id'],$cate_id);
 
 		//轮播图片
@@ -46,12 +47,12 @@ class SiteController extends CController
 		$ads = ad::model()->findAll($criteria);
 
 		//学校新闻 notice
-		$criteria=new CDbCriteria;		
+		$criteria=new CDbCriteria;
 		$criteria->condition = "";
 		$criteria->order = 'sort ';
 		$criteria->limit = 8;
-		$notices = notice::model()->findAll($criteria);		
-		
+		$notices = notice::model()->findAll($criteria);
+
 		//学校概况 content/about
 		$criteria->condition = "cate_id = 11";
 		$criteria->order = 'sort ';
@@ -71,8 +72,8 @@ class SiteController extends CController
 		$criteria->condition = "cate_id = 23";
 		$criteria->order = 'sort ';
 		$criteria->limit = 8;
-		$slifes = notice::model()->findAll($criteria);				
-		
+		$slifes = notice::model()->findAll($criteria);
+		$honers = $lifes = array();
 		$data = array(
 			'digest' => $digest,
 			'tops' => $tops,

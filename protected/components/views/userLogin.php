@@ -11,7 +11,9 @@
 <div class="simple">
 	<?php echo CHtml::activeLabel($form,'verifyCode'); ?>
 	<div class="pt">
-		<?php $this->widget('CCaptcha'); ?><br/>
+		<?php $this->widget('CCaptcha',array(
+			'captchaAction'=>Yii::app()->params['base_url'].'/site/captcha'
+		)); ?><br/>
 		<?php echo CHtml::activeTextField($form,'verifyCode',array('class'=>'t_input')); ?>
 	</div>
 	<p class="hint">请输入上面的4位字母或数字，看不清可刷新</p>
